@@ -18,6 +18,24 @@ import {
   Partner,
   Role,
 } from "./styles";
+interface Props{
+  margin:number,
+  role:string,
+  nome:string,
+  image:string
+}
+const PartTeam:React.FC<Props> = ({margin,role,nome,image}) => {
+  return (
+    <div>
+      <Partner margin={margin}>
+        <PartnerPhoto src={image} />
+        <PName>{nome}</PName>
+        <Role>{role}</Role>
+      </Partner>
+    </div>
+  );
+};
+
 export default function MyTeam() {
   return (
     <div>
@@ -28,49 +46,51 @@ export default function MyTeam() {
             <TitleTeamInfo>Who we are</TitleTeamInfo>
             <TeamInfo>
               We are team of creatively diverse. driven.
-              <br />
               innovative individuals working in various locations from the
               world.
             </TeamInfo>
           </HeaderLeft>
         </Headers>
+        <br></br>
         <TeamMembers>
-          <Partner margin={0}>
-          <Role>Product owner</Role>
-            <PartnerPhoto src={Photo01} />
-            <PName>Bill Mahoney</PName>
-            
-          </Partner>
+          <PartTeam
+            role="Product owner"
+            image={Photo01}
+            nome="Bill Mahoney"
+            margin={0}
+          />
+          <PartTeam
+            role="Art director"
+            image={Photo02}
+            nome="Saba Cabrera"
+            margin={100}
+          />
 
-          <Partner margin={100}>
-            <PartnerPhoto src={Photo02} />
-            <PName>Saba Cabrera</PName>
-            <Role>Art director</Role>
-          </Partner>
+          <PartTeam
+            role="UX Designer"
+            image={Photo03}
+            nome="Saba Cabrera"
+            margin={0}
+          />
 
-          <Partner margin={0}>
-            <PartnerPhoto src={Photo03} />
-            <PName>Tech Lead</PName>
-            <Role>UX Designer</Role>
-          </Partner>
-
-          <Partner margin={0}>
-            <PartnerPhoto src={Photo04} />
-            <PName>Skylah Lu</PName>
-            <Role>Product owner</Role>
-          </Partner>
-
-          <Partner margin={100}>
-            <PartnerPhoto src={Photo05} />
-            <PName>Griff Richards</PName>
-            <Role>Developer</Role>
-          </Partner>
-
-          <Partner margin={0}>
-            <PartnerPhoto src={Photo06} />
-            <PName>Stan John</PName>
-            <Role>DEverloper</Role>
-          </Partner>
+          <PartTeam
+            role="UX Designer"
+            image={Photo04}
+            nome="Skylah Lu"
+            margin={0}
+          />
+          <PartTeam
+            role="Developer"
+            image={Photo05}
+            nome="Griff Richards"
+            margin={100}
+          />
+          <PartTeam
+            role="DEverloper"
+            image={Photo06}
+            nome="Stan John"
+            margin={0}
+          />
         </TeamMembers>
       </Grid>
     </div>

@@ -5,9 +5,16 @@ export const Grid = styled.div`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-areas: "HEADER" "BODY";
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "HEADER" "BODY";
+  }
 `;
 export const HeaderLeft = styled.div`
   grid-area: info;
+  @media (max-width: 768px) {
+    margin: 1em;    
+  }
 `;
 export const Headers = styled.div`
   margin-top: 2em;
@@ -15,6 +22,11 @@ export const Headers = styled.div`
   display: grid;
   grid-template-columns: 45% 50%;
   grid-template-areas: "tittle info";
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "tittle" "info";
+  }
 `;
 export const TitleTeam = styled.p`
   grid-area: tittle;
@@ -28,6 +40,17 @@ export const TitleTeam = styled.p`
   letter-spacing: -0.045em;
 
   color: #000000;
+  @media (max-width: 768px) {
+    padding-left: 0.3em;
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.045em;
+
+    color: #000000;
+  }
 `;
 export const TitleTeamInfo = styled.p`
   font-family: "Poppins";
@@ -39,7 +62,9 @@ export const TitleTeamInfo = styled.p`
 
   /* identical to box height */
   text-transform: uppercase;
-
+  @media (max-width: 768px) {
+    padding: 0.5em;
+  }
   color: #000000;
 `;
 export const TeamInfo = styled.span`
@@ -49,14 +74,20 @@ export const TeamInfo = styled.span`
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
-
+  @media (max-width: 768px) {
+    padding: 1em;
+  }
   color: #000000;
 `;
 export const TeamMembers = styled.div`
   grid-area: BODY;
   display: grid;
-  grid-template-columns: repeat(3, 0.65fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 10% 15%;
+  @media (max-width: 768px) {
+    margin: 1% 1%;
+    padding: 0.5em;
+  }
 `;
 
 export const Partner = styled.div<Margin>`
@@ -100,5 +131,4 @@ export const Role = styled.div`
   transform: rotate(90deg);
 
   right: 0vw;
-
 `;
