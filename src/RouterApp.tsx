@@ -11,7 +11,7 @@ export function RouterApp() {
         <Router>
             <Routes>
                 <Route path="/" element={<MyTeam />} />
-                <Route path="*" element={<Error404 />} />
+                <Route path="/404error" element={<Error404 />} />
             </Routes>
         </Router>
     );
